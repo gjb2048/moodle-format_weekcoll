@@ -4,6 +4,8 @@ Introduction
 ------------
 Week based course format with an individual 'toggle' for each week except 0.  The current week is always shown.
 
+This version works with Moodle 1.9.
+
 Documented on http://docs.moodle.org/en/Collapsed_Weeks_course_format
 
 Installation
@@ -125,7 +127,7 @@ Version Information
 11th September 2010 - Version 1.2.3 - Moodle Tracker CONTRIB-2355
   1. Added the ability to remove 'topic x' and the section number from being displayed.  To do this, open up
      format.php in a text editor - preferably with line numbers displayed - such as Notepad++ - and read the 
-	 instructions on lines 239 and 252.  
+     instructions on lines 239 and 252.  
 
 7th November 2010 - Version 1.2.4 - Moodle Tracker CONTRIB-2497
   1. Added Dutch language.  Thanks to Pieter Wolters - http://moodle.org/user/profile.php?id=537037 - for this.
