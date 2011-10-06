@@ -1,5 +1,5 @@
 <?php
-// $Id: format.php,v 1.1.4.13 2011/05/30 17:17:06 gb2048 Exp $
+// $Id: format.php,v 1.1.4.14 2011/10/06 14:31:55 gb2048 Exp $
 /**
  * Collapsed Weeks Information
  *
@@ -37,7 +37,9 @@ require_js(array('yui_yahoo', 'yui_cookie', 'yui_event'));
                   null); <!-- Expiring Cookie Initialisation - replace 'null' with your chosen duration. -->);
 //]]>
 </script>
-<?php    
+<script type="text/javascript" src="<?php echo $CFG->wwwroot ?>/course/format/weekcoll/wc_section_classes_min.js"></script>
+
+<?php
     $week = optional_param('week', -1, PARAM_INT);
 
     // Bounds for block widths
@@ -175,6 +177,18 @@ require_js(array('yui_yahoo', 'yui_cookie', 'yui_event'));
 
     }
 
+    // Get the specific words from the language files.
+    $weektext = get_string('week');
+    $toggletext = get_string('weekcolltoggle','format_weekcoll'); // This is defined in lang/en_utf8 of the formats installation directory - basically, the word 'Toggle'.
+
+    // Toggle all.
+    echo '<tr id="toggle-all" class="section main">';
+    echo '<td class="left side toggle-all" colspan="2">';
+    echo '<h4><a class="on" href="#" onclick="all_opened(); return false;">'.get_string('weekcollopened','format_weekcoll').'</a><a class="off" href="#" onclick="all_closed(); return false;">'.get_string('weekcollclosed','format_weekcoll').'</a>'.get_string('weekcollall','format_weekcoll').'</h4>';
+    echo '</td>';
+    echo '<td class="right side">&nbsp;</td>';
+    echo '</tr>';
+    echo '<tr class="section separator"><td colspan="3" class="spacer"></td></tr>';
 
 /// Now all the normal modules by week
 /// Everything below uses "section" terminology - each "section" is a week.
@@ -190,9 +204,6 @@ require_js(array('yui_yahoo', 'yui_cookie', 'yui_event'));
 
     $strftimedateshort = ' '.get_string('strftimedateshort');
 
-    // Get the specific words from the language files.
-    $weektext = get_string('week');
-    $toggletext = get_string('weekcolltoggle','format_weekcoll'); // This is defined in lang/en_utf8 of the formats installation directory - basically, the word 'Toggle'.
     while ($weekdate < $course->enddate) {
 
         $nextweekdate = $weekdate + ($weekofseconds);

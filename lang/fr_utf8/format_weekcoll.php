@@ -1,4 +1,4 @@
-<?php // $Id: format_weekcoll.php,v 1.1.2.3 2011/05/30 17:17:06 gb2048 Exp $
+ï»¿<?php // $Id: format_weekcoll.php,v 1.1.2.4 2011/10/06 14:31:54 gb2048 Exp $
 /**
  * Collapsed Weeks Information
  *
@@ -10,15 +10,21 @@
  */
 
 // French Translation of Collapsed Weeks Course Format
-// Traduction française du Format du cours Collapsed Semaines
+// Traduction franÃ§aise du Format du cours Collapsed Semaines
 
 // Used by the Moodle Core for identifing the format and displaying in the list of formats for a course in its settings.
-// Utilisée par le noyau de Moodle pour une indication des format et l'affichage dans la liste des formats pour un cours de ses paramètres.
+// UtilisÃ©e par le noyau de Moodle pour une indication des format et l'affichage dans la liste des formats pour un cours de ses paramÃ¨tres.
 $string['nameweekcoll']='Semaines Collapsed';
 $string['formatweekcoll']='Semaines Collapsed';
+$string['pluginname'] = 'Semaines Collapsed';
 
 // Used in format.php
-// Employée au format.php
+// EmployÃ©e au format.php
 $string['weekcolltoggle']='Basculer';
 $string['weekcolltogglewidth']='width: 46px;';
+
+// Toggle all - Moodle Tracker CONTRIB-3190
+$string['weekcollall']='toute bascule.';
+$string['weekcollopened']='Ouvert';
+$string['weekcollclosed']='Fermez';
 ?>

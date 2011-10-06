@@ -1,4 +1,4 @@
-<?php // $Id: format_weekcoll.php,v 1.1.2.3 2011/05/30 17:17:05 gb2048 Exp $
+﻿<?php // $Id: format_weekcoll.php,v 1.1.2.4 2011/10/06 14:31:54 gb2048 Exp $
 /**
  * Collapsed Weeks Information
  *
@@ -13,12 +13,18 @@
 // Polskie tlumaczenie Collapsed tygodniowy kurs Format
 
 // Used by the Moodle Core for identifing the format and displaying in the list of formats for a course in its settings.
-// Uzywane przez Moodle Core dla identifing format i wyswietlanie w liscie format�w na kurs w jego ustawienia.
+// Uzywane przez Moodle Core dla identifing format i wyswietlanie w liscie formatów na kurs w jego ustawienia.
 $string['nameweekcoll']='Tygodnie Collapsed';
 $string['formatweekcoll']='Tygodnie Collapsed';
+$string['pluginname'] = 'Tygodnie Collapsed';
 
 // Used in format.php
 // Uzywane w format.php
 $string['weekcolltoggle']='Dzwignia kolankowa';
 $string['weekcolltogglewidth']='width: 42px;';
+
+// Toggle all - Moodle Tracker CONTRIB-3190
+$string['weekcollall']='wszystkie przełączniki.';
+$string['weekcollopened']='Otwórz';
+$string['weekcollclosed']='Zamknij';
 ?>

@@ -1,4 +1,4 @@
-<?php // $Id: format_weekcoll.php,v 1.1.2.3 2011/05/30 17:17:06 gb2048 Exp $
+﻿<?php // $Id: format_weekcoll.php,v 1.1.2.4 2011/10/06 14:31:54 gb2048 Exp $
 /**
  * Collapsed Weeks Information
  *
@@ -16,9 +16,14 @@
 // Gebruikt door de Moodle Core voor identifing het formaat en het weergeven in de lijst van formaten voor een cursus in de instellingen.
 $string['nameweekcoll']='Ingestort Weken';
 $string['formatweekcoll']='Ingestort Weken';
+$string['pluginname'] = 'Ingestort Weken';
 
 // Used in format.php
-//
 $string['weekcolltoggle']='In- Uitklappen';
 $string['weekcolltogglewidth']='width: 28px;';
+
+// Toggle all - Moodle Tracker CONTRIB-3190
+$string['weekcollall']='alle schakelt.';
+$string['weekcollopened']='Open';
+$string['weekcollclosed']='Sluit';
 ?>

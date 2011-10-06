@@ -1,4 +1,4 @@
-/* $Id: weeks_collapsed.css,v 1.1.4.6 2011/05/30 17:17:06 gb2048 Exp $ */
+/* $Id: weeks_collapsed.css,v 1.1.4.7 2011/10/06 14:31:55 gb2048 Exp $ */
 /**
  * Collapsed Weeks Information
  *
@@ -89,4 +89,34 @@ tr.cps td a:hover {
 #theweeks {
 	width: 100%;
 	table-layout: fixed;
-}   
+}
+
+/* Toggle all */
+#toggle-all td h4 {
+    display: inline;
+}
+
+#theweeks .section td.toggle-all  {
+	text-align: left;
+}
+
+#toggle-all td  a {
+	padding: 7px 7px 7px 30px; /* The 30px allows the arrow to be on the left and the text next to it. */
+	text-align: left;
+	width: 35px;
+	text-decoration: none;
+}
+
+#toggle-all td a.on {
+	background: transparent url(arrow_down.png) no-repeat 0px 45%; 
+}
+
+#toggle-all td a.off {
+	background: transparent url(arrow_up.png) no-repeat 0px 45%; 
+}
+
+/* -- hide the children for IE7 and older -- */
+.collapsed_week *
+{
+    display: none;
+}

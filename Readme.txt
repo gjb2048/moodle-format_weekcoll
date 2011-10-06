@@ -1,8 +1,7 @@
-$Id: Readme.txt,v 1.1.4.15 2011/06/09 18:20:40 gb2048 Exp $
+﻿$Id: Readme.txt,v 1.1.4.16 2011/10/06 14:31:55 gb2048 Exp $
 
 Introduction
 ------------
-
 Week based course format with an individual 'toggle' for each week except 0.  The current week is always shown.
 
 Documented on http://docs.moodle.org/en/Collapsed_Weeks_course_format
@@ -72,8 +71,13 @@ NOTE: The client's browser must support the persistent storage of cookies in the
 Known Issues
 ------------
 
-1.  AJAX Drag and Drop does not move the toggle header with the section content, so currently disabled.  Please see Moodle tracker
-    CONTRIB-2975 (http://tracker.moodle.org/browse/CONTRIB-2975).
+1.  If you get toggle text issues in languages other than English please ensure you have the latest version of Moodle installed.  More
+    information on http://moodle.org/mod/forum/discuss.php?d=184150.
+2.  AJAX drag and drop appears not to be working in IE 9 for me, but is in compatibility mode (IE 7) and same issue with the standard
+    topics format too.  Hence I consider it to be either an issue with my system or Moodle Core.  If you experience it and wish to use
+    the up and down arrows, edit ajax.php and remove "'MSIE' => 6.0," from:
+    "$CFG->ajaxtestedbrowsers = array('MSIE' => 6.0, 'Gecko' => 20061111, 'Opera' => 9.0, 'Safari' => 531, 'Chrome' => 6.0);"
+    And if possible, please let me know, my Moodle.org profile is 'http://moodle.org/user/profile.php?id=442195'.
 
 References
 ----------
@@ -148,6 +152,14 @@ Version Information
   1. AJAX support temporarily withdrawn due to issue with moving sections and the toggle title not following.
      Complex to resolve.
 
+6th October 2011 - Version 1.6 - Moodle Tracker CONTRIB-2975, CONTRIB-3189 and CONTRIB-3190.
+  1. CONTRIB-2975 - AJAX support reinstated after working out a way of swapping the content as well as the toggle.  Solution sparked off by
+                    Amanda Doughty (http://tracker.moodle.org/secure/ViewProfile.jspa?name=amanda.doughty).
+  2. CONTRIB-3189 - Reported by Benn Cass that text in IE8- does not hide when the toggle is closed, solution suggested
+                    by Mark Ward (http://moodle.org/user/profile.php?id=489101) - please see http://moodle.org/mod/forum/discuss.php?d=183875.
+  3. CONTRIB-3190 - In realising that to make CONTRIB-2975 easier to use I suggested 'Toggle all' functionality and the
+                    community said it was a good idea with no negative comments, please see (http://moodle.org/mod/forum/discuss.php?d=176806).
+
 Thanks
 ------
 I would like to thank Anthony Borrow - arborrow@jesuits.net & anthony@moodle.org - for his invaluable input.
@@ -158,6 +170,10 @@ indeed all those who have worked on the developer documentation - http://docs.mo
 
 Michael de Raadt for CONTRIB-1945 & 1946 which sparked fixes in CONTRIB-1952 & CONTRIB-1954
 
+Amanda Doughty (http://moodle.org/user/profile.php?id=1062329) for her contribution in solving the AJAX move problem.
+
+Mark Ward (http://moodle.org/user/profile.php?id=489101) for his contribution solving the IE8- display problem.
+
 Desired Enhancements
 --------------------
 
@@ -167,4 +183,4 @@ Desired Enhancements
 3. Use ordered lists / divs instead of tables to fall in line with current web design theory.  Older versions of
    'certain' browsers causing issues in making this happen.
 
-G J Barnard - BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 9th June 2011
+G J Barnard - BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 6th October 2011

@@ -1,4 +1,4 @@
-<?php // $Id: format_weekcoll.php,v 1.1.2.3 2011/05/30 17:17:07 gb2048 Exp $
+﻿<?php // $Id: format_weekcoll.php,v 1.1.2.4 2011/10/06 14:31:56 gb2048 Exp $
 /**
  * Collapsed Weeks Information
  *
@@ -16,9 +16,15 @@
 // Utilizzato dal Moodle per identificare i il formato e la visualizzazione nella lista dei formati per un corso di sue impostazioni.
 $string['nameweekcoll']='Compresso Settimane';
 $string['formatweekcoll']='Compresso Settimane';
+$string['pluginname'] = 'Compresso Settimane';
 
 // Used in format.php
 // Utilizzato in format.php
 $string['weekcolltoggle']='Olivetta';
 $string['weekcolltogglewidth']='width: 52px;';
+
+// Toggle all - Moodle Tracker CONTRIB-3190
+$string['weekcollall']='';
+$string['weekcollopened']="Aperto tutto l'alterna.";
+$string['weekcollclosed']='Chiudere tutte le alterna.';
 ?>
