@@ -1,1 +1,1 @@
-This is the Moodle 1.9 branch.
+This is the Moodle 2.0 branch.
