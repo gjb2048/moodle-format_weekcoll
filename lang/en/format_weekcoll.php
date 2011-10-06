@@ -1,4 +1,4 @@
-﻿<?php // $Id: format_weekcoll.php,v 1.5 2011/05/30 17:38:28 gb2048 Exp $
+﻿<?php // $Id: format_weekcoll.php,v 1.6 2011/10/06 15:45:14 gb2048 Exp $
 /**
  * Collapsed Weeks Information
  *
@@ -17,6 +17,11 @@ $string['formatweekcoll']='Collapsed Weeks';
 // Used in format.php
 $string['weekcolltoggle']='Toggle';
 $string['weekcolltogglewidth']='width: 28px;';
+
+// Toggle all - Moodle Tracker CONTRIB-3190
+$string['weekcollall']='all toggles.';
+$string['weekcollopened']='Open';
+$string['weekcollclosed']='Close';
 
 // Moodle 2.0 Enhancement - Moodle Tracker MDL-15252, MDL-21693 & MDL-22056 - http://docs.moodle.org/en/Development:Languages
 $string['sectionname'] = 'Week';

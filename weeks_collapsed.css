@@ -1,4 +1,4 @@
-/* $Id: weeks_collapsed.css,v 1.4 2011/05/30 17:38:02 gb2048 Exp $ */
+/* $Id: weeks_collapsed.css,v 1.5 2011/10/06 15:45:14 gb2048 Exp $ */
 /**
  * Collapsed Weeks Information
  *
@@ -70,23 +70,23 @@ tr.cps td a:hover {
 }		   
 		   
 /* -- For Internet Explorer inability to deal with column calculations when a colspan is used -- */		   
-#thetopics .section td.content, #thetopics  col.content {
+#theweeks .section td.content, #theweeks  col.content {
 	width: auto;
 	text-align: left;
 }
 
 /* -- Where the Toggle's arrow png is -- */
-#thetopics .section td.left, #thetopics  col.left {
+#theweeks .section td.left, #theweeks  col.left {
 	width: 28px; /* If the arrow's width changes, change this and the padding of 'tr.cps td a' in js-override-topcoll.css */
 }	
 
 /* -- Where the 'Week x' text is -- */
-#thetopics .section td.right, #thetopics  col.right {
+#theweeks .section td.right, #theweeks  col.right {
 	width: 28px;
 }
 
 /* -- Make the table work with auto width for the content column -- */
-#thetopics {
+#theweeks {
 	width: 100%;
 	table-layout: fixed;
 }
@@ -94,4 +94,34 @@ tr.cps td a:hover {
 /* -- Size of the spacer row -- */
 .section .spacer {
   height:0.5em;
+}
+
+/* Toggle all */
+#toggle-all td h4 {
+    display: inline;
+}
+
+#theweeks .section td.toggle-all  {
+	text-align: left;
+}
+
+#toggle-all td  a {
+	padding: 7px 7px 7px 30px; /* The 30px allows the arrow to be on the left and the text next to it. */
+	text-align: left;
+	width: 35px;
+	text-decoration: none;
+}
+
+#toggle-all td a.on {
+	background: transparent url(arrow_down.png) no-repeat 0px 45%; 
+}
+
+#toggle-all td a.off {
+	background: transparent url(arrow_up.png) no-repeat 0px 45%; 
+}
+
+/* -- hide the children for IE7 and older -- */
+.collapsed_week *
+{
+    display: none;
 }

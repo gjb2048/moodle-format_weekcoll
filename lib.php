@@ -1,4 +1,4 @@
-<?php // $Id: lib.php,v 1.7 2011/06/09 18:12:48 gb2048 Exp $
+<?php // $Id: lib.php,v 1.8 2011/10/06 15:45:14 gb2048 Exp $
 /**
    This file contains general functions for the course format Collapsed Weeks
    Thanks to Sam Hemelryk who modified the Moodle core code for 2.0, and
@@ -102,7 +102,7 @@ function callback_weekcoll_get_section_name($course, $section) {
  */
 function callback_weekcoll_ajax_support() {
     $ajaxsupport = new stdClass();
-    $ajaxsupport->capable = false;  // Temporarily disabled whilst CONTRIB-2975 is unresolved.
-    $ajaxsupport->testedbrowsers = array('MSIE' => 6.0, 'Gecko' => 20061111, 'Safari' => 531, 'Chrome' => 6.0);
+    $ajaxsupport->capable = true;  // See CONTRIB-2975 for information on how fixed.
+    $ajaxsupport->testedbrowsers = array('MSIE' => 6.0, 'Gecko' => 20061111, 'Opera' => 9.0, 'Safari' => 531, 'Chrome' => 6.0); 
     return $ajaxsupport;
 }

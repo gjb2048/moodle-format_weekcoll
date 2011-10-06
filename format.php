@@ -1,5 +1,5 @@
 <?php
-// $Id: format.php,v 1.25 2011/05/30 17:38:02 gb2048 Exp $
+// $Id: format.php,v 1.26 2011/10/06 15:45:14 gb2048 Exp $
 /**
  * Collapsed Weeks Information
  *
@@ -36,7 +36,11 @@ require_once($CFG->libdir.'/completionlib.php');
                                             preg_replace("/[^A-Za-z0-9]/", "", $SITE->shortname),
                                             $course->id,
                                             null)); // Expiring Cookie Initialisation - replace 'null' with your chosen duration.
-    
+    if (ajaxenabled() && $PAGE->user_is_editing()) {
+        // This overrides the 'swap_with_section' function in /lib/ajax/section_classes.js
+        $PAGE->requires->js('/course/format/weekcoll/wc_section_classes_min.js');
+    }
+
     $week = optional_param('cweeks', -1, PARAM_INT);
 
     $context = get_context_instance(CONTEXT_COURSE, $course->id);
@@ -72,7 +76,7 @@ require_once($CFG->libdir.'/completionlib.php');
     echo "<span id='maincontent'></span>";
     // Establish the table for the weeks with the colgroup and col tags to allow css to set the widths of the columns correctly and fix them in the browser so
     // that the columns do not magically resize when the toggle is used or we go into editing mode.
-    echo '<table id="thetopics" summary="'.get_string('layouttable').'">';
+    echo '<table id="theweeks" summary="'.get_string('layouttable').'">';
     echo '<colgroup><col class="left" /><col class="content" /><col class="right" style="'.get_string('weekcolltogglewidth','format_weekcoll').'" /></colgroup>';
     
     // If currently moving a file then show the current clipboard
@@ -128,6 +132,19 @@ require_once($CFG->libdir.'/completionlib.php');
         echo '<tr class="section separator"><td colspan="3" class="spacer"></td></tr>';
     }
 
+    // Get the specific words from the language files.
+    $weektext = get_string('sectionname','format_weekcoll'); 
+    $toggletext = get_string('weekcolltoggle','format_weekcoll'); // The table row of the toggle.
+
+    // Toggle all.
+    echo '<tr id="toggle-all" class="section main">';
+    echo '<td class="left side toggle-all" colspan="2">';
+    echo '<h4><a class="on" href="#" onclick="all_opened(); return false;">'.get_string('weekcollopened','format_weekcoll').'</a><a class="off" href="#" onclick="all_closed(); return false;">'.get_string('weekcollclosed','format_weekcoll').'</a>'.get_string('weekcollall','format_weekcoll').'</h4>';
+    echo '</td>';
+    echo '<td class="right side">&nbsp;</td>';
+    echo '</tr>';
+    echo '<tr class="section separator"><td colspan="3" class="spacer"></td></tr>';
+
     // Now all the normal modules by week
     // Everything below uses "section" terminology - each "section" is a week.
     $timenow = time();
@@ -143,10 +160,6 @@ require_once($CFG->libdir.'/completionlib.php');
 
     $strftimedateshort = ' '.get_string('strftimedateshort');
 
-    // Get the specific words from the language files.
-    $weektext = get_string('sectionname','format_weekcoll'); 
-    $toggletext = get_string('weekcolltoggle','format_weekcoll'); // The table row of the toggle.
-    
     while ($weekdate < $course->enddate) {
         $nextweekdate = $weekdate + ($weekofseconds);
         $weekday = userdate($weekdate, $strftimedateshort);

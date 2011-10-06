@@ -31,3 +31,8 @@ tr.cps td a {
 tr.cps td {
     height: 35px;
 }
+
+/* -- Toggle All text -- */
+#theweeks .section td.toggle-all  {
+	width: 100%;
+}

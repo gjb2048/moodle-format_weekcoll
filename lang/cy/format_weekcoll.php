@@ -1,4 +1,4 @@
-﻿<?php // $Id: format_weekcoll.php,v 1.3 2011/05/30 17:38:29 gb2048 Exp $
+﻿<?php // $Id: format_weekcoll.php,v 1.4 2011/10/06 15:45:14 gb2048 Exp $
 /**
  * Collapsed Weeks Information
  *
@@ -21,6 +21,11 @@ $string['formatweekcoll']='Wythnosau Dymchwel';
 // A ddefnyddir mewn format.php
 $string['weekcolltoggle']='Toggle';
 $string['weekcolltogglewidth']='width: 38px;';
+
+// Toggle all - Moodle Tracker CONTRIB-3190
+$string['weekcollall']='pob toglau.';
+$string['weekcollopened']='Agored';
+$string['weekcollclosed']='Cau';
 
 // Moodle 2.0 Enhancement - Moodle Tracker MDL-15252, MDL-21693 & MDL-22056 - http://docs.moodle.org/en/Development:Languages
 // Moodle 2.0 Gwella - Moodle Tracker MDL-15252, MDL-21693 & MDL-22056 - http://docs.moodle.org/en/Development:Languages
