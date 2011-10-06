@@ -1,10 +1,10 @@
-﻿<?php // $Id: format_weekcoll.php,v 1.1.2.4 2011/10/06 14:31:56 gb2048 Exp $
+﻿<?php // $Id: format_weekcoll.php,v 1.1.2.5 2011/10/06 15:17:14 gb2048 Exp $
 /**
  * Collapsed Weeks Information
  *
  * @package    course/format
  * @subpackage weekcoll
- * @copyright  2009-2011 @ G J Barnard.
+ * @copyright  2009-2011 @ G J Barnard in respect to modifications of standard weeks format.
  * @link       http://docs.moodle.org/en/Collapsed_Weeks_course_format
  * @license    http://creativecommons.org/licenses/by-sa/3.0/ Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
  */
