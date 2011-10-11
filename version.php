@@ -19,7 +19,7 @@
  * Collapsed Weeks Information
  *
  * @package    course/format
- * @subpackage topcoll
+ * @subpackage weekcoll
  * @copyright  2009-2011 G J Barnard in respect to modifications of standard weeks format.
  * @author     G J Barnard {@link http://moodle.org/user/profile.php?id=442195}
  * @link       http://docs.moodle.org/en/Collapsed_Weeks_course_format
@@ -28,6 +28,6 @@
  
  $plugin->version = 2011101112;
  $plugin->maturity = MATURITY_STABLE;
- $plugin->requires = 2011033005; // 2.0.5
+ $plugin->requires = 2011070102; // 2.1.2
  $plugin->component = 'format_weekcoll';
- $plugin->release = '1.3';
+ $plugin->release = '1.3.1';

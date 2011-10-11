@@ -100,10 +100,10 @@ require_once($CFG->libdir.'/completionlib.php');
         echo '<td class="left side">&nbsp;</td>';
         echo '<td class="content">';
         
-        if (!is_null($thissection->name)) { // MDL-20628
-            echo $OUTPUT->heading($thissection->name, 3, 'sectionname');
+        if (!is_null($thissection->name)) { // MDL-29188
+            echo $OUTPUT->heading(format_string($thissection->name, true, array('context' => $context)), 3, 'sectionname');
         }
-        
+
         echo '<div class="summary">';
 
         $coursecontext = get_context_instance(CONTEXT_COURSE, $course->id);
@@ -213,11 +213,11 @@ require_once($CFG->libdir.'/completionlib.php');
             } else {
                 echo '<td colspan="2"><a id="sectionatag-'.$section.'" href="#" onclick="toggle_week(this,'.$section.'); return false;"><span>';
                 echo $weekperiod;
-                echo '<br />'.html_to_text($thissection->name).'</span> - '.$toggletext.'</a></td><td class="cps_centre">'.$weektext.'<br />'.$currenttext.$section.'</td>';
+                echo '<br />'.html_to_text(format_string($thissection->name, true, array('context' => $context))).'</span> - '.$toggletext.'</a></td><td class="cps_centre">'.$weektext.'<br />'.$currenttext.$section.'</td>'; // format_string from MDL-29188
                   // Comment out the above three lines and uncomment the lines below if you do not want 'Week x' displayed on the right hand side of the toggle.
                 //echo '<td colspan="3"><a id="sectionatag-'.$section.'" href="#" onclick="toggle_week(this,'.$section.'); return false;"><span>';
                 //echo $weekperiod;
-                //echo '<br />'.html_to_text($thissection->name).'</span> - '.$toggletext.'</a></td>';                
+                //echo '<br />'.html_to_text(format_string($thissection->name, true, array('context' => $context))).'</span> - '.$toggletext.'</a></td>';                
             }
             echo '</tr>';
 
