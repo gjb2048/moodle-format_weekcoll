@@ -186,6 +186,8 @@ Released Moodle 2.0 version.  Treat as completed and out of development.
   3. CONTRIB-3190 - In realising that to make CONTRIB-2975 easier to use I suggested 'Toggle all' functionality and the
                     community said it was a good idea with no negative comments, please see (http://moodle.org/mod/forum/discuss.php?d=176806).
 
+11th October 2011 - Updated version.php to be fully populated.
+
 Thanks
 ------
 I would like to thank Anthony Borrow - arborrow@jesuits.net & anthony@moodle.org - for his invaluable input.
@@ -226,4 +228,4 @@ Desired Enhancements
 3. Use ordered lists / divs instead of tables to fall in line with current web design theory.  Older versions of
    'certain' browsers causing issues in making this happen.
 
-G J Barnard - BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 6th October 2011.
+G J Barnard - BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 11th October 2011.
