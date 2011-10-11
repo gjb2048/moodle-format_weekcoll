@@ -1,10 +1,8 @@
-﻿$Id: Readme.txt,v 1.21 2011/10/06 15:45:14 gb2048 Exp $
-
-Introduction
+﻿Introduction
 ------------
 Week based course format with an individual 'toggle' for each week except 0.  The current week is always shown.
 
-This version works with Moodle 2.0+.  And should be fine with 2.1 and 2.2.
+This version works with Moodle 2.0.
 
 Documented on http://docs.moodle.org/20/en/Collapsed_Weeks_course_format
 
