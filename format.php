@@ -1,47 +1,32 @@
-<?php
-// $Id: format.php,v 1.1.4.14 2011/10/06 14:31:55 gb2048 Exp $
-/**
- * Collapsed Weeks Information
- *
- * @package    course/format
- * @subpackage weekcoll
- * @copyright  2009-2011 @ G J Barnard in respect to modifications of standard weeks format.
- * @link       http://docs.moodle.org/en/Collapsed_Weeks_course_format
- * @license    http://creativecommons.org/licenses/by-sa/3.0/ Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
- */
+<?php // $Id: format.php,v 1.1.2.8 2010/09/11 19:09:16 gb2048 Exp $
+      // Display the whole course as "weeks" made of of modules
+      // Included from "view.php"
+    require_once($CFG->libdir.'/ajax/ajaxlib.php');
+	// For persistence of toggles.
+	?>
+	<script type="text/javascript" src="<?php echo $CFG->wwwroot ?>/course/format/weekcoll/lib/yahoo/yahoo-min.js"></script>
+	<script type="text/javascript" src="<?php echo $CFG->wwwroot ?>/course/format/weekcoll/lib/cookie/cookie-min.js"></script>
+	<script type="text/javascript" src="<?php echo $CFG->wwwroot ?>/course/format/weekcoll/lib/event/event-min.js"></script>
+	<?php
 
- // Display the whole course as "weeks" made of of modules
-// Included from "view.php"
-
-require_once($CFG->libdir.'/ajax/ajaxlib.php');
-
-// For persistence of toggles.
-require_js(array('yui_yahoo', 'yui_cookie', 'yui_event'));
-// Now get the css and JavaScript Lib.  The call to weekcoll_init sets things up for JavaScript to work by understanding the particulars of this course.
-?>    
+	// Now get the css and JavaScript Lib.  The call to weekcoll_init sets things up for JavaScript to work by understanding the particulars of this course.
+?>
 <style type="text/css" media="screen">
 /* <![CDATA[ */
-    @import url(<?php echo $CFG->wwwroot ?>/course/format/weekcoll/weeks_collapsed.css);
+	@import url(<?php echo $CFG->wwwroot ?>/course/format/weekcoll/weeks_collapsed.css);
 /* ]]> */
 </style>
 <!--[if lte IE 7]>
-    <link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot ?>/course/format/weekcoll/ie-7-hacks.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot ?>/course/format/weekcoll/ie-7-hacks.css" media="screen" />
 <![endif]-->
-
 <script type="text/javascript" src="<?php echo $CFG->wwwroot ?>/course/format/weekcoll/lib_min.js"></script>
 <script type="text/javascript">
 //<![CDATA[
-    weekcoll_init('<?php echo $CFG->wwwroot ?>',
-                  '<?php echo preg_replace("/[^A-Za-z0-9]/", "", $SITE->shortname) ?>',
-                  '<?php echo $course->id ?>',
-                  null); <!-- Expiring Cookie Initialisation - replace 'null' with your chosen duration. -->);
+	weekcoll_init('<?php echo $CFG->wwwroot ?>','<?php echo preg_replace("/[^A-Za-z0-9]/", "", $SITE->shortname) ?>','<?php echo $course->id ?>');
 //]]>
 </script>
-<script type="text/javascript" src="<?php echo $CFG->wwwroot ?>/course/format/weekcoll/wc_section_classes_min.js"></script>
-
-<?php
+<?php	
     $week = optional_param('week', -1, PARAM_INT);
-
     // Bounds for block widths
     // more flexible for theme designers taken from theme config.php
     $lmin = (empty($THEME->block_l_min_width)) ? 100 : $THEME->block_l_min_width;
@@ -53,7 +38,7 @@ require_js(array('yui_yahoo', 'yui_cookie', 'yui_event'));
     define('BLOCK_L_MAX_WIDTH', $lmax);
     define('BLOCK_R_MIN_WIDTH', $rmin);
     define('BLOCK_R_MAX_WIDTH', $rmax);
-  
+
     $preferred_width_left  = bounded_number(BLOCK_L_MIN_WIDTH, blocks_preferred_width($pageblocks[BLOCK_POS_LEFT]),  
                                             BLOCK_L_MAX_WIDTH);
     $preferred_width_right = bounded_number(BLOCK_R_MIN_WIDTH, blocks_preferred_width($pageblocks[BLOCK_POS_RIGHT]), 
@@ -61,21 +46,21 @@ require_js(array('yui_yahoo', 'yui_cookie', 'yui_event'));
 
     $context = get_context_instance(CONTEXT_COURSE, $course->id);
 
-    if ($week != -1) {
+	if ($week != -1) {
         $displaysection = course_set_display($course->id, $week);
     } else {
         if (isset($USER->display[$course->id])) {
-            // If we are editing then we can show only one section.
-            if (isediting($course->id) && has_capability('moodle/course:update', $context))
-            {
-                $displaysection = $USER->display[$course->id];
-            }
-            else
-            {
-                // Wipe out display section so that when we finish editing and then return we are not confused by
-                // only a single section being displayed.
-                $displaysection = course_set_display($course->id, 0);
-            }
+		    // If we are editing then we can show only one section.
+			if (isediting($course->id) && has_capability('moodle/course:update', $context))
+			{
+				$displaysection = $USER->display[$course->id];
+			}
+			else
+			{
+				// Wipe out display section so that when we finish editing and then return we are not confused by
+				// only a single section being displayed.
+				$displaysection = course_set_display($course->id, 0);
+			}
         } else {
             $displaysection = course_set_display($course->id, 0);
         }
@@ -106,13 +91,18 @@ require_js(array('yui_yahoo', 'yui_cookie', 'yui_event'));
             case 'left':
  
 /// The left column ...
-
     if (blocks_have_content($pageblocks, BLOCK_POS_LEFT) || $editing) {
         echo '<td style="width:'.$preferred_width_left.'px" id="left-column">';
 
-        print_container_start();
-        blocks_print_group($PAGE, $pageblocks, BLOCK_POS_LEFT);
-        print_container_end();
+        if (!empty($THEME->roundcorners)) {
+            echo '<div class="bt"><div></div></div>';
+            echo '<div class="i1"><div class="i2"><div class="i3">';
+		}
+		blocks_print_group($PAGE, $pageblocks, BLOCK_POS_LEFT);
+        if (!empty($THEME->roundcorners)) {
+            echo '</div></div></div>';
+            echo '<div class="bb"><div></div></div>';
+        }
 
         echo '</td>';
     }
@@ -121,16 +111,16 @@ require_js(array('yui_yahoo', 'yui_cookie', 'yui_event'));
 /// Start main column
     echo '<td id="middle-column">';
 
-    print_container_start();
-        
-    echo skip_main_destination();
+    if (!empty($THEME->roundcorners)) {
+        echo '<div class="bt"><div></div></div>';
+        echo '<div class="i1"><div class="i2"><div class="i3">';
+    }
+    echo '<a name="startofcontent"></a>';
 
     print_heading_block(get_string('weeklyoutline'), 'outline');
 
     echo '<table id="theweeks" class="weeks" width="100%" summary="'.get_string('layouttable').'">';
-    echo '<colgroup><col class="left" /><col class="content" /><col class="right" style="'.get_string('weekcolltogglewidth','format_weekcoll').'" /></colgroup>';
-    // The string 'weekcolltogglewidth' above can be set in the language file to allow for different lengths of words for different languages.
-    // For example $string['weekcolltogglewidth']='width: 42px;' - if not defined, then the default '#theweeks col.right' in weeks_collapsed.css applies.
+	echo '<colgroup><col class="left" /><col class="content" /><col class="right" /></colgroup>';
 
 /// If currently moving a file then show the current clipboard
     if (ismoving($course->id)) {
@@ -139,18 +129,16 @@ require_js(array('yui_yahoo', 'yui_cookie', 'yui_event'));
         echo '<tr class="clipboard">';
         echo '<td colspan="3">';
         echo $stractivityclipboard.'&nbsp;&nbsp;(<a href="mod.php?cancelcopy=true&amp;sesskey='.$USER->sesskey.'">'.$strcancel.'</a>)';
-        echo '</td>';
-        echo '</tr>';
+        echo '</td></tr>';
     }
 
 /// Print Section 0 with general activities
 
     $section = 0;
     $thissection = $sections[$section];
-
     if ($thissection->summary or $thissection->sequence or isediting($course->id)) {
         echo '<tr id="section-0" class="section main">';
-        echo '<td id="sectionblock-0" class="left side">&nbsp;</td>';  // MDL-18232
+        echo '<td class="left side">&nbsp;</td>';
         echo '<td class="content">';
         
         echo '<div class="summary">';
@@ -174,21 +162,8 @@ require_js(array('yui_yahoo', 'yui_cookie', 'yui_event'));
         echo '<td class="right side">&nbsp;</td>';
         echo '</tr>';
         echo '<tr class="section separator"><td colspan="3" class="spacer"></td></tr>';
-
     }
 
-    // Get the specific words from the language files.
-    $weektext = get_string('week');
-    $toggletext = get_string('weekcolltoggle','format_weekcoll'); // This is defined in lang/en_utf8 of the formats installation directory - basically, the word 'Toggle'.
-
-    // Toggle all.
-    echo '<tr id="toggle-all" class="section main">';
-    echo '<td class="left side toggle-all" colspan="2">';
-    echo '<h4><a class="on" href="#" onclick="all_opened(); return false;">'.get_string('weekcollopened','format_weekcoll').'</a><a class="off" href="#" onclick="all_closed(); return false;">'.get_string('weekcollclosed','format_weekcoll').'</a>'.get_string('weekcollall','format_weekcoll').'</h4>';
-    echo '</td>';
-    echo '<td class="right side">&nbsp;</td>';
-    echo '</tr>';
-    echo '<tr class="section separator"><td colspan="3" class="spacer"></td></tr>';
 
 /// Now all the normal modules by week
 /// Everything below uses "section" terminology - each "section" is a week.
@@ -198,12 +173,15 @@ require_js(array('yui_yahoo', 'yui_cookie', 'yui_event'));
     $weekdate += 7200;                 // Add two hours to avoid possible DST problems
     $section = 1;
     $sectionmenu = array();
-    $theweek = 0; // The section that will be the current week
+	$theweek = 0; // The section that will be the current week
     $weekofseconds = 604800;
     $course->enddate = $course->startdate + ($weekofseconds * $course->numsections);
 
     $strftimedateshort = ' '.get_string('strftimedateshort');
 
+ 	// Get the specific words from the language files.
+	$weektext = get_string('week');
+	$toggletext = get_string('weekcolltoggle','format_weekcoll'); // This is defined in lang/en_utf8 of the formats installation directory - basically, the word 'Toggle'.
     while ($weekdate < $course->enddate) {
 
         $nextweekdate = $weekdate + ($weekofseconds);
@@ -245,40 +223,38 @@ require_js(array('yui_yahoo', 'yui_cookie', 'yui_event'));
             } else if ($currentweek) {
                 $sectionstyle = ' current';
                 $currenttext = get_accesshide(get_string('currentweek','access'));
-                $theweek = $section;
+				$theweek = $section;
             } else {
                 $sectionstyle = '';
             }
 
             $weekperiod = $weekday.' - '.$endweekday;
-                        
-            echo '<tr class="cps" id="sectionhead-'.$section.'">'; // The table row of the toggle.
-            // Have a different look depending on if the section summary has been completed.
-            if (empty($thissection->summary)) {
-                $thissection->summary='';
-                echo '<td colspan="3"><a id="sectionatag-'.$section.'" class="cps_nosumm" href="#" onclick="toggle_week(this,'.$section.'); return false;"><span>';
-                echo stripslashes_safe($weekperiod);
-                echo '</span><br />'.$weektext.' '.$currenttext.$section.' - '.$toggletext.'</a></td>';
-            } else {
-                echo '<td colspan="2"><a id="sectionatag-'.$section.'" href="#" onclick="toggle_week(this,'.$section.'); return false;"><span>';
-                echo stripslashes_safe($weekperiod);
-                echo '<br />'.html_to_text($thissection->summary).'</span> - '.$toggletext.'</a></td><td class="cps_centre">'.$weektext.'<br />'.$currenttext.$section.'</td>';
-                  // Comment out the above three lines and uncomment the lines below if you do not want 'Week x' displayed on the right hand side of the toggle.
-                //echo '<td colspan="3"><a id="sectionatag-'.$section.'" href="#" onclick="toggle_week(this,'.$section.'); return false;"><span>';
-                //echo stripslashes_safe($weekperiod);
-                //echo '<br />'.html_to_text($thissection->summary).'</span> - '.$toggletext.'</a></td>';
+						
+			echo '<tr class="cps" id="sectionhead-'.$section.'">'; // The table row of the toggle.
+			// Have a different look depending on if the section summary has been completed.
+			if (empty($thissection->summary)) {
+				$thissection->summary='';
+				echo '<td colspan="3"><a id="sectionatag-'.$section.'" class="cps_nosumm" href="#" onclick="toggle_week(this,'.$section.'); return false;"><span>';
+				echo stripslashes_safe($weekperiod);
+				echo '</span><br />'.$weektext.' '.$currenttext.$section.' - '.$toggletext.'</a></td>';
+			} else {
+				echo '<td colspan="2"><a id="sectionatag-'.$section.'" href="#" onclick="toggle_week(this,'.$section.'); return false;"><span>';
+				echo stripslashes_safe($weekperiod);
+				echo '<br />'.html_to_text($thissection->summary).'</span> - '.$toggletext.'</a></td><td class="cps_centre">'.$weektext.'<br />'.$currenttext.$section.'</td>';
+  			    // Comment out the above three lines and uncomment the lines below if you do not want 'Topic x' displayed on the right hand side of the toggle.
+				//echo '<td colspan="3"><a id="sectionatag-'.$section.'" href="#" onclick="toggle_week(this,'.$section.'); return false;"><span>';
+				//echo stripslashes_safe($weekperiod);
+				//echo '<br />'.html_to_text($thissection->summary).'</span> - '.$toggletext.'</a></td>';
+			}
+			echo '</tr>';
 
-            }
-            echo '</tr>';
-
-            // Now the section itself.  The css class of 'hid' contains the display attribute that manipulated by the JavaScript to show and hide the section.  It is defined in js-override-weekcoll.css which 
-            // is loaded into the DOM by the JavaScript function weekcoll_init.  Therefore having a logical separation between static and JavaScript manipulated css.  Nothing else here differs from 
-            // the standard Weeks format in the core distribution.  The next change is at the bottom.
+			// Now the section itself.  The css class of 'hid' contains the display attribute that manipulated by the JavaScript to show and hide the section.  It is defined in js-override-weekcoll.css which 
+			// is loaded into the DOM by the JavaScript function weekcoll_init.  Therefore having a logical separation between static and JavaScript manipulated css.  Nothing else here differs from 
+			// the standard Weeks format in the core distribution.  The next change is at the bottom.
             echo '<tr id="section-'.$section.'" class="section main'.$sectionstyle.' hid">';
-            echo '<td id="sectionblock-'.$section.'" class="left side">&nbsp;'.$currenttext.$section.'</td>';  // MDL-18232
-            // Comment out the above line and uncomment the line below if you do not want the section number displayed on the left hand side of the section.
+            echo '<td class="left side">&nbsp;'.$currenttext.$section.'</td>';
+			// Comment out the above line and uncomment the line below if you do not want the section number displayed on the left hand side of the section.
             //echo '<td class="left side">&nbsp;</td>';
-
 
             echo '<td class="content">';
             if (!has_capability('moodle/course:viewhiddensections', $context) and !$thissection->visible) {   // Hidden for students
@@ -288,14 +264,14 @@ require_js(array('yui_yahoo', 'yui_cookie', 'yui_event'));
                 echo '<div class="summary">';
 
                 if (isediting($course->id) && has_capability('moodle/course:update', $context)) {
-                    print_heading($weekperiod, null, 3, 'weekdates');
-                    $summaryformatoptions->noclean = true;
-                    echo format_text($thissection->summary, FORMAT_HTML, $summaryformatoptions);
+					print_heading($weekperiod, null, 3, 'weekdates');
+					$summaryformatoptions->noclean = true;
+					echo format_text($thissection->summary, FORMAT_HTML, $summaryformatoptions);
                     echo ' <a title="'.$streditsummary.'" href="editsection.php?id='.$thissection->id.'">'.
                          '<img src="'.$CFG->pixpath.'/t/edit.gif" class="iconsmall edit" alt="'.$streditsummary.'" /></a><br /><br />';
                 }
                 echo '</div>';
-                
+
                 print_section($course, $thissection, $mods, $modnamesused);
 
                 if (isediting($course->id)) {
@@ -306,17 +282,17 @@ require_js(array('yui_yahoo', 'yui_cookie', 'yui_event'));
 
             echo '<td class="right side">';
 
-            if (isediting($course->id) && has_capability('moodle/course:update', $context)) {
-            // Only contemplate allowing a single viewable section when editing, other situations confusing!
-                if ($displaysection == $section) {
-                    echo '<a href="view.php?id='.$course->id.'&amp;week=0#section-'.$section.'" title="'.$strshowallweeks.'">'.
-                         '<img src="'.$CFG->pixpath.'/i/all.gif" class="icon wkall" alt="'.$strshowallweeks.'" /></a><br />';
-                } else {
-                    $strshowonlyweek = get_string("showonlyweek", "", $section);
-                    echo '<a href="view.php?id='.$course->id.'&amp;week='.$section.'" title="'.$strshowonlyweek.'">'.
-                         '<img src="'.$CFG->pixpath.'/i/one.gif" class="icon wkone" alt="'.$strshowonlyweek.'" /></a><br />';
-                }
-            }
+			if (isediting($course->id) && has_capability('moodle/course:update', $context)) {
+			// Only contemplate allowing a single viewable section when editing, other situations confusing!
+				if ($displaysection == $section) {
+					echo '<a href="view.php?id='.$course->id.'&amp;week=0#section-'.$section.'" title="'.$strshowallweeks.'">'.
+						 '<img src="'.$CFG->pixpath.'/i/all.gif" class="icon wkall" alt="'.$strshowallweeks.'" /></a><br />';
+				} else {
+					$strshowonlyweek = get_string("showonlyweek", "", $section);
+					echo '<a href="view.php?id='.$course->id.'&amp;week='.$section.'" title="'.$strshowonlyweek.'">'.
+						 '<img src="'.$CFG->pixpath.'/i/one.gif" class="icon wkone" alt="'.$strshowonlyweek.'" /></a><br />';
+				}
+			}
 
             if (isediting($course->id) && has_capability('moodle/course:update', $context)) {
                 if ($thissection->visible) {        // Show the hide/show eye
@@ -353,7 +329,10 @@ require_js(array('yui_yahoo', 'yui_cookie', 'yui_event'));
         echo '</div>';
     }
 
-    print_container_end();
+    if (!empty($THEME->roundcorners)) {
+        echo '</div></div></div>';
+        echo '<div class="bb"><div></div></div>';
+    }
 
     echo '</td>';
 
@@ -363,9 +342,15 @@ require_js(array('yui_yahoo', 'yui_cookie', 'yui_event'));
     if (blocks_have_content($pageblocks, BLOCK_POS_RIGHT) || $editing) {
         echo '<td style="width: '.$preferred_width_right.'px;" id="right-column">';
 
-        print_container_start();
+        if (!empty($THEME->roundcorners)) {
+            echo '<div class="bt"><div></div></div>';
+            echo '<div class="i1"><div class="i2"><div class="i3">';
+        }
         blocks_print_group($PAGE, $pageblocks, BLOCK_POS_RIGHT);
-        print_container_end();
+        if (!empty($THEME->roundcorners)) {
+            echo '</div></div></div>';
+            echo '<div class="bb"><div></div></div>';
+        }
 
         echo '</td>';
     }
@@ -374,31 +359,31 @@ require_js(array('yui_yahoo', 'yui_cookie', 'yui_event'));
         }
     }
     echo '</tr></table>';
-    // Establish persistance when  we have loaded!
-    ?>
-    <script type="text/javascript" defer="defer"> // Defer running of the script until all HMTL has been passed.
+	// Establish persistance when  we have loaded!
+	?>
+	<script type="text/javascript" defer="defer"> // Defer running of the script until all HMTL has been passed.
 //<![CDATA[
     <?php
-    echo 'set_number_of_toggles('.$course->numsections.');'; // Tell JavaScript how many Toggles to reset.    
-    echo 'set_current_week('.$theweek.');'; // Ensure that the current week is always open.
-    // Restore the state of the toggles from the cookie if not in 'Show week x' mode, otherwise show that week.
-    if ($displaysection == 0)
-    {
-        echo 'YAHOO.util.Event.onDOMReady(reload_toggles);';
-        // TODO: Use below later instead of above, for reason see below for save_toggles.
-        //echo 'window.addEventListener("load",reload_toggles,false);'; 
-    }
-    else
-    {
-        echo 'show_week('.$displaysection.');';
-    }
-    // Save the state of the toggles when the page unloads.  This is a stopgap as toggle state is saved every time
-    // they change.  This is because there is no 'refresh' event yet which would be the best implementation.
-    // TODO: Comment line 58 (save_toggles call in togglebinary function) of lib.js and make into lib_min.js when
-    //       IE9 fully established with proper DOM event handling -
-    //       http://blogs.msdn.com/ie/archive/2010/03/26/dom-level-3-events-support-in-ie9.aspx &
-    //       http://dev.w3.org/2006/webapi/DOM-Level-3-Events/html/DOM3-Events.html#event-types-list
-    //echo 'window.addEventListener("unload",save_toggles,false);';  TODO Comment
-    ?>
+	echo 'set_number_of_toggles('.$course->numsections.');'; // Tell JavaScript how many Toggles to reset.	
+	echo 'set_current_week('.$theweek.');'; // Ensure that the current week is always open.
+	// Restore the state of the toggles from the cookie if not in 'Show week x' mode, otherwise show that week.
+	if ($displaysection == 0)
+	{
+		echo 'YAHOO.util.Event.onDOMReady(reload_toggles);';
+		// TODO: Use below later instead of above, for reason see below for save_toggles.
+		//echo 'window.addEventListener("load",reload_toggles,false);'; 
+	}
+	else
+	{
+		echo 'show_week('.$displaysection.');';
+	}
+	// Save the state of the toggles when the page unloads.  This is a stopgap as toggle state is saved every time
+	// they change.  This is because there is no 'refresh' event yet which would be the best implementation.
+	// TODO: Comment line 58 (save_toggles call in togglebinary function) of lib.js and make into lib_min.js when
+	//       IE9 fully established with proper DOM event handling -
+	//       http://blogs.msdn.com/ie/archive/2010/03/26/dom-level-3-events-support-in-ie9.aspx &
+	//       http://dev.w3.org/2006/webapi/DOM-Level-3-Events/html/DOM3-Events.html#event-types-list
+	//echo 'window.addEventListener("unload",save_toggles,false);';  TODO Comment
+	?>
 //]]>
 </script>

@@ -1,14 +1,4 @@
-/* $Id: weeks_collapsed.css,v 1.1.4.7 2011/10/06 14:31:55 gb2048 Exp $ */
-/**
- * Collapsed Weeks Information
- *
- * @package    course/format
- * @subpackage weekcoll
- * @copyright  2009-2011 @ G J Barnard.
- * @link       http://docs.moodle.org/en/Collapsed_Weeks_course_format
- * @license    http://creativecommons.org/licenses/by-sa/3.0/ Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
- */
-
+/* $Id: weeks_collapsed.css,v 1.1.2.5 2010/04/09 21:39:55 gb2048 Exp $ */
 /* -- The Toggle's row -- */
 tr.cps {
 	display: table-row;
@@ -54,7 +44,7 @@ tr.cps td a {
 /* Toggle row. */
 tr.cps {
 	background-color: #e2e2f2;
-	color: #000000; /* 'Topic x' text colour */
+	color: #000000; /* 'Week x' text colour */
 }
 
 /* Toggle text */
@@ -67,7 +57,6 @@ tr.cps td a {
 tr.cps td a:hover {
 	background-color: #eeeeff;
 }
-		   
 
 /* -- For Internet Explorer inability to deal with column calculations when a colspan is used -- */		   
 #theweeks .section td.content, #theweeks  col.content {
@@ -89,34 +78,4 @@ tr.cps td a:hover {
 #theweeks {
 	width: 100%;
 	table-layout: fixed;
-}
-
-/* Toggle all */
-#toggle-all td h4 {
-    display: inline;
-}
-
-#theweeks .section td.toggle-all  {
-	text-align: left;
-}
-
-#toggle-all td  a {
-	padding: 7px 7px 7px 30px; /* The 30px allows the arrow to be on the left and the text next to it. */
-	text-align: left;
-	width: 35px;
-	text-decoration: none;
-}
-
-#toggle-all td a.on {
-	background: transparent url(arrow_down.png) no-repeat 0px 45%; 
-}
-
-#toggle-all td a.off {
-	background: transparent url(arrow_up.png) no-repeat 0px 45%; 
-}
-
-/* -- hide the children for IE7 and older -- */
-.collapsed_week *
-{
-    display: none;
-}
+}   
