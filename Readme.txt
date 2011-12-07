@@ -194,4 +194,4 @@ Desired Enhancements
 3. Use ordered lists / divs instead of tables to fall in line with current web design theory.  Older versions of
    'certain' browsers causing issues in making this happen.
 
-G J Barnard - BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 11th October 2011
+G J Barnard - MSc, BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 7th December 2011
