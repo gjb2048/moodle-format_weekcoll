@@ -1,1 +1,1 @@
-This is the Moodle 2.2.x branch.
+This is the master development branch.
