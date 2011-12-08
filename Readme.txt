@@ -164,8 +164,9 @@ Version Information
 
 11th October 2011 - Updated version.php to be fully populated.
 
-7th December 2011 - Version 1.6.1 - Moodle Tracker CONTRIB-2497
+7th December 2011 - Version 1.9.6.1 - Moodle Tracker CONTRIB-2497
   1. Updated Brazilian translation thanks to Tarcísio Nunes (http://moodle.org/user/profile.php?id=1149633).
+  2. Changed version to relate to Moodle version, so this is for Moodle 1.9.
 
 Thanks
 ------
@@ -194,4 +195,4 @@ Desired Enhancements
 3. Use ordered lists / divs instead of tables to fall in line with current web design theory.  Older versions of
    'certain' browsers causing issues in making this happen.
 
-G J Barnard - MSc, BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 7th December 2011
+G J Barnard - MSc, BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 7th December 2011.
