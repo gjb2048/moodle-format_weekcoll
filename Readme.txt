@@ -1,6 +1,4 @@
-﻿$Id: Readme.txt,v 1.1.4.16 2011/10/06 14:31:55 gb2048 Exp $
-
-Introduction
+﻿Introduction
 ------------
 Week based course format with an individual 'toggle' for each week except 0.  The current week is always shown.
 
