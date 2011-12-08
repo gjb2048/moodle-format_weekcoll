@@ -27,7 +27,7 @@
  */
  
  $plugin->version = 2011120821;
- $plugin->maturity = MATURITY_STABLE;
+ $plugin->maturity = MATURITY_BETA;
  $plugin->requires = 2011120500.00; // 2.3dev
  $plugin->component = 'format_weekcoll';
  $plugin->release = '2.3.1';
