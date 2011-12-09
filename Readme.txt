@@ -2,7 +2,7 @@
 ------------
 Week based course format with an individual 'toggle' for each week except 0.  The current week is always shown.
 
-This version works with Moodle 1.9.
+This version works with Moodle 1.9.x.
 
 Documented on http://docs.moodle.org/en/Collapsed_Weeks_course_format
 
@@ -166,6 +166,10 @@ Version Information
   1. Updated Brazilian translation thanks to Tarcísio Nunes (http://moodle.org/user/profile.php?id=1149633).
   2. Changed version to relate to Moodle version, so this is for Moodle 1.9.
 
+9th December 2011 - Version 1.9.6.2 - Moodle Tracker CONTRIB-3295
+  1. Fixed issue of the web browser miscaluating the width of the content in 'editing' mode so that the sections
+     are less than 100%.
+
 Thanks
 ------
 I would like to thank Anthony Borrow - arborrow@jesuits.net & anthony@moodle.org - for his invaluable input.
@@ -193,4 +197,4 @@ Desired Enhancements
 3. Use ordered lists / divs instead of tables to fall in line with current web design theory.  Older versions of
    'certain' browsers causing issues in making this happen.
 
-G J Barnard - MSc, BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 8th December 2011.
+G J Barnard - MSc, BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 9th December 2011.
