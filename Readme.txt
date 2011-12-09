@@ -4,7 +4,7 @@ Week based course format with an individual 'toggle' for each week except 0.  Th
 
 This version works with Moodle 2.1.x.
 
-Documented on http://docs.moodle.org/20/en/Collapsed_Weeks_course_format
+Documented on http://docs.moodle.org/21/en/Collapsed_Weeks_course_format
 
 Installation
 ------------
