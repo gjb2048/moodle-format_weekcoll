@@ -192,6 +192,9 @@ Released Moodle 2.0 version.  Treat as completed and out of development.
   1. Updated Brazilian translation thanks to Tarcísio Nunes (http://moodle.org/user/profile.php?id=1149633).
   2. Changed version to relate to Moodle version, so this is for Moodle 2.1.
 
+3rd January 2012 - Version 2.1.3.3.1 - Moodle Tracker MDL-30632
+  1. Use consistent edit section icon.
+
 Thanks
 ------
 I would like to thank Anthony Borrow - arborrow@jesuits.net & anthony@moodle.org - for his invaluable input.
@@ -236,4 +239,4 @@ Desired Enhancements
 3. Use ordered lists / divs instead of tables to fall in line with current web design theory.  Older versions of
    'certain' browsers causing issues in making this happen.
 
-G J Barnard - MSc, BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 8th December 2011.
+G J Barnard - MSc, BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 3rd January 2012.
