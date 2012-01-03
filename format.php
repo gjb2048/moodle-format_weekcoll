@@ -116,7 +116,7 @@ require_once($CFG->libdir.'/completionlib.php');
         if ($PAGE->user_is_editing() && has_capability('moodle/course:update', $context)) {
             echo '<p><a title="'.$streditsummary.'" '.
                  ' href="editsection.php?id='.$thissection->id.'"><img src="'.$OUTPUT->pix_url('t/edit') . '" '.
-                 ' class="icon edit" alt="'.$streditsummary.'" /></a></p>';
+                 ' class="iconsmall edit" alt="'.$streditsummary.'" /></a></p>';
         }
         echo '</div>';
 
@@ -245,7 +245,7 @@ require_once($CFG->libdir.'/completionlib.php');
 
                 if ($PAGE->user_is_editing() && has_capability('moodle/course:update', $context)) {
                     echo '<a title="'.$streditsummary.'" href="editsection.php?id='.$thissection->id.'">'.
-                         '<img src="'.$OUTPUT->pix_url('t/edit') . '" class="icon edit" alt="'.$streditsummary.'" /></a><br /><br />';
+                         '<img src="'.$OUTPUT->pix_url('t/edit') . '" class="iconsmall edit" alt="'.$streditsummary.'" /></a><br /><br />';
                 }
                 echo '</div>';
 
