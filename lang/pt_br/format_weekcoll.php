@@ -15,6 +15,7 @@
  * @author     G J Barnard - gjbarnard at gmail dot com and {@link http://moodle.org/user/profile.php?id=442195}
  * @link       http://docs.moodle.org/en/Collapsed_Weeks_course_format
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License
+ * @comment    A big thank you to Tarcísio Nunes (http://moodle.org/user/profile.php?id=1149633) for the translation.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
