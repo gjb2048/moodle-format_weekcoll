@@ -199,6 +199,9 @@ Released Moodle 2.0 version.  Treat as completed and out of development.
 3rd January 2012 - Version 2.3.1.1.1 - Moodle Tracker MDL-30632
   1. Use consistent edit section icon.
 
+9th January 2012 - Version 2.3.1.1.2
+  1. Corrected licence to be correct one used by Moodle Plugins - thanks to Tim Hunt (http://moodle.org/user/profile.php?id=93821).
+
 Thanks
 ------
 I would like to thank Anthony Borrow - arborrow@jesuits.net & anthony@moodle.org - for his invaluable input.
@@ -243,4 +246,4 @@ Desired Enhancements
 3. Use ordered lists / divs instead of tables to fall in line with current web design theory.  Older versions of
    'certain' browsers causing issues in making this happen.
 
-G J Barnard - MSc, BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 3rd January 2012.
+G J Barnard - MSc, BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 9th January 2012.
