@@ -1,4 +1,4 @@
-<?php // $Id: lib.php,v 1.8 2011/10/06 15:45:14 gb2048 Exp $
+<?php
 /**
    This file contains general functions for the course format Collapsed Weeks
    Thanks to Sam Hemelryk who modified the Moodle core code for 2.0, and
