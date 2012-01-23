@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Collapsed Weeks Information
  *
