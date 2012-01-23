@@ -31,21 +31,21 @@
 
 /* -- The Toggle's row -- */
 tr.cps {
-	display: block;
+  display: block;
 }
 
 /* http://www.satzansatz.de/cssd/onhavinglayout.html & http://www.cayenne.co.uk/ie7/disappearing-content.html */
 /* -- Set the clickable element of the Toggle -- */
 tr.cps td a {
-	width: 100%;
+  width: 100%;
     height: 35px;
-	padding: 7px 0px 2px 35px;
-	zoom: 100%; 
+  padding: 7px 0px 2px 35px;
+  zoom: 100%; 
 }
 
-/* -- Size of the spacer row -- */		
+/* -- Size of the spacer row -- */    
 .section .spacer {
-	height:1.4em;
+  height:1.4em;
 }
 
 /* -- The table data section of a Toggle's row -- */
@@ -55,5 +55,5 @@ tr.cps td {
 
 /* -- Toggle All text -- */
 #theweeks .section td.toggle-all  {
-	width: 100%;
+  width: 100%;
 }

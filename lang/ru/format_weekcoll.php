@@ -10,11 +10,12 @@
  *
  * @package    course/format
  * @subpackage weekcoll
- * @version    See the value of '$plugin->version' below.
+ * @version    See the value of '$plugin->version' in version.php.
  * @copyright  &copy; 2009-onwards G J Barnard in respect to modifications of standard weeks format.
  * @author     G J Barnard - gjbarnard at gmail dot com and {@link http://moodle.org/user/profile.php?id=442195}
  * @link       http://docs.moodle.org/en/Collapsed_Weeks_course_format
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License
+ * @comment    A big thank you to Pavel Evgenjevich Timoshenko (http://moodle.org/user/profile.php?id=1322784) for the translation.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,9 +30,23 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
- 
- $plugin->version = 2012012300;
- $plugin->maturity = MATURITY_STABLE;
- $plugin->requires = 2011033005.00; // 2.0.5
- $plugin->component = 'format_weekcoll';
- $plugin->release = '2.0.4';
+
+// Used by the Moodle Core for identifing the format and displaying in the list of formats for a course in its settings.
+// Possibly legacy to be removed after Moodle 2.0 is stable.
+$string['nameweekcoll']='Сворачиваемые разделы по неделям';
+$string['formatweekcoll']='Сворачиваемые разделы по неделям';
+
+// Used in format.php
+$string['weekcolltoggle']='Показать/Скрыть';
+$string['weekcolltogglewidth']='width: 28px;';
+
+// Toggle all - Moodle Tracker CONTRIB-3190
+$string['weekcollall']='все разделы.';
+$string['weekcollopened']='Показать';
+$string['weekcollclosed']='Скрыть';
+
+// Moodle 2.0 Enhancement - Moodle Tracker MDL-15252, MDL-21693 & MDL-22056 - http://docs.moodle.org/en/Development:Languages
+$string['sectionname'] = 'Неделя';
+$string['pluginname'] = 'Сворачиваемые разделы по неделям';
+$string['section0name'] = 'Общее';
+?>
