@@ -15,6 +15,7 @@
  * @author     G J Barnard - gjbarnard at gmail dot com and {@link http://moodle.org/user/profile.php?id=442195}
  * @link       http://docs.moodle.org/en/Collapsed_Weeks_course_format
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License
+ * @comment    A big thank you to Pavel Evgenjevich Timoshenko (http://moodle.org/user/profile.php?id=1322784) for the translation.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,27 +31,22 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// Welsh Translation of Collapsed Weeks Course Format
-// Cyfieithu Cymraeg o Wythnos dymchwel Fformat y Cwrs
-
 // Used by the Moodle Core for identifing the format and displaying in the list of formats for a course in its settings.
-// Ddefnyddir gan y Craidd Moodle ar gyfer identifing y fformat ac arddangos yn y rhestr o ffurfiau ar gyfer cwrs yn ei lleoliadau.
-$string['nameweekcoll']='Wythnosau Dymchwel';
-$string['formatweekcoll']='Wythnosau Dymchwel';
+// Possibly legacy to be removed after Moodle 2.0 is stable.
+$string['nameweekcoll']='Сворачиваемые разделы по неделям';
+$string['formatweekcoll']='Сворачиваемые разделы по неделям';
 
 // Used in format.php
-// A ddefnyddir mewn format.php
-$string['weekcolltoggle']='Toggle';
-$string['weekcolltogglewidth']='width: 38px;';
+$string['weekcolltoggle']='Показать/Скрыть';
+$string['weekcolltogglewidth']='width: 28px;';
 
 // Toggle all - Moodle Tracker CONTRIB-3190
-$string['weekcollall']='pob toglau.';
-$string['weekcollopened']='Agored';
-$string['weekcollclosed']='Cau';
+$string['weekcollall']='все разделы.';
+$string['weekcollopened']='Показать';
+$string['weekcollclosed']='Скрыть';
 
 // Moodle 2.0 Enhancement - Moodle Tracker MDL-15252, MDL-21693 & MDL-22056 - http://docs.moodle.org/en/Development:Languages
-// Moodle 2.0 Gwella - Moodle Tracker MDL-15252, MDL-21693 & MDL-22056 - http://docs.moodle.org/en/Development:Languages
-$string['sectionname'] = 'Wythnos';
-$string['pluginname'] = 'Wythnosau Dymchwel';
-$string['section0name'] = 'Cyffredinol';
+$string['sectionname'] = 'Неделя';
+$string['pluginname'] = 'Сворачиваемые разделы по неделям';
+$string['section0name'] = 'Общее';
 ?>

@@ -1,4 +1,3 @@
-//  $Id: lib.js,v 1.9 2011/10/06 15:45:14 gb2048 Exp $
 /**
  * Collapsed Weeks Information
  *
