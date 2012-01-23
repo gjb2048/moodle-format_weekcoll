@@ -15,6 +15,7 @@
  * @author     G J Barnard - gjbarnard at gmail dot com and {@link http://moodle.org/user/profile.php?id=442195}
  * @link       http://docs.moodle.org/en/Collapsed_Weeks_course_format
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License
+ * @comment    A big thank you to Pavel Evgenjevich Timoshenko (http://moodle.org/user/profile.php?id=1322784) for the translation.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,22 +31,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// Italian Translation of Collapsed Weeks Course Format
-// Traduzione italiana di Collapsed Corso Format Settimane
-
 // Used by the Moodle Core for identifing the format and displaying in the list of formats for a course in its settings.
-// Utilizzato dal Moodle per identificare i il formato e la visualizzazione nella lista dei formati per un corso di sue impostazioni.
-$string['nameweekcoll']='Compresso Settimane';
-$string['formatweekcoll']='Compresso Settimane';
-$string['pluginname'] = 'Compresso Settimane';
+// Possibly legacy to be removed after Moodle 2.0 is stable.
+$string['nameweekcoll']='Сворачиваемые разделы по неделям';
+$string['formatweekcoll']='Сворачиваемые разделы по неделям';
 
 // Used in format.php
-// Utilizzato in format.php
-$string['weekcolltoggle']='Olivetta';
-$string['weekcolltogglewidth']='width: 52px;';
+$string['weekcolltoggle']='Показать/Скрыть';
+$string['weekcolltogglewidth']='width: 38px;';
 
 // Toggle all - Moodle Tracker CONTRIB-3190
-$string['weekcollall']='';
-$string['weekcollopened']="Aperto tutto l'alterna.";
-$string['weekcollclosed']='Chiudere tutte le alterna.';
+$string['weekcollall']='все разделы.';
+$string['weekcollopened']='Показать';
+$string['weekcollclosed']='Скрыть';
 ?>

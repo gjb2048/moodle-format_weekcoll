@@ -1,4 +1,4 @@
-﻿Introduction
+Introduction
 ------------
 Week based course format with an individual 'toggle' for each week except 0.  The current week is always shown.
 
@@ -173,6 +173,10 @@ Version Information
 10th January 2012 - Version 1.9.6.2.1
   1. Corrected licence to be correct one used by Moodle Plugins - thanks to Tim Hunt (http://moodle.org/user/profile.php?id=93821).
 
+23rd January 2012 - Version 1.9.7
+  1. Sorted out UTF-8 BOM issue, see MDL-31343.
+  2. Added Russian translation, thanks to Pavel Evgenjevich Timoshenko (http://moodle.org/user/profile.php?id=1322784).
+
 Thanks
 ------
 I would like to thank Anthony Borrow - arborrow@jesuits.net & anthony@moodle.org - for his invaluable input.
@@ -191,6 +195,8 @@ Pieter Wolters (http://moodle.org/user/profile.php?id=537037) - for the Dutch tr
 
 Tarcísio Nunes (http://moodle.org/user/profile.php?id=1149633) - for the Brazilian translation.
 
+Pavel Evgenjevich Timoshenko (http://moodle.org/user/profile.php?id=1322784) - for the Russian translation.
+
 Desired Enhancements
 --------------------
 
@@ -200,4 +206,4 @@ Desired Enhancements
 3. Use ordered lists / divs instead of tables to fall in line with current web design theory.  Older versions of
    'certain' browsers causing issues in making this happen.
 
-G J Barnard - MSc, BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 10th January 2012.
+G J Barnard - MSc, BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 23rd January 2012.
