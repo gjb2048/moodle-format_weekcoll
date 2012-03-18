@@ -30,8 +30,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
  
- $plugin->version = 2012012300;
+ $plugin->version = 2012031800;
  $plugin->maturity = MATURITY_STABLE;
  $plugin->requires = 2011120500.00; // 2.2
  $plugin->component = 'format_weekcoll';
- $plugin->release = '2.2.2';
+ $plugin->release = '2.2.3';
