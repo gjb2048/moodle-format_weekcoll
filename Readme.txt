@@ -177,6 +177,11 @@ Version Information
   1. Sorted out UTF-8 BOM issue, see MDL-31343.
   2. Added Russian translation, thanks to Pavel Evgenjevich Timoshenko (http://moodle.org/user/profile.php?id=1322784).
 
+18th March 2012 - Version 1.9.8
+  1. Implemented CONTRIB-3225 to make Collapsed Weeks accessible to screen readers.
+  2. Implemented CONTRIB-3283 to ensure that you can still access a week when one is removed.
+  3. This is likely to be the last release of Collapsed Weeks due to its integration into Collapsed Topics - CONTRIB-3378.  This release is later than that but I wanted to leave the code without any outstanding issues.
+
 Thanks
 ------
 I would like to thank Anthony Borrow - arborrow@jesuits.net & anthony@moodle.org - for his invaluable input.
@@ -206,4 +211,4 @@ Desired Enhancements
 3. Use ordered lists / divs instead of tables to fall in line with current web design theory.  Older versions of
    'certain' browsers causing issues in making this happen.
 
-G J Barnard - MSc, BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 23rd January 2012.
+G J Barnard - MSc, BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 18th March 2012.

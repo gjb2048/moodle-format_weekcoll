@@ -293,7 +293,12 @@ function reload_toggles()
 // Show a specific week - used when in 'Show week x' mode.
 function show_week(theWeek)
 {
-    toggleexactweek(document.getElementById("section-"+theWeek),document.getElementById("sectionatag-" + theWeek),theWeek,true);
+    var section = document.getElementById("section-"+theWeek);  // CONTRIB-3283
+    var secatag = document.getElementById("sectionatag-" + theWeek);
+    if ((section != null) && (secatag != null))
+    {
+        toggleexactweek(section,secatag,theWeek,true);
+    }
 }
 
 // Save the toggles - called from togglebinary and an the unload event handler at the bottom of format.php which does not work for a refresh even though it should!
