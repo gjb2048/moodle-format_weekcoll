@@ -1,4 +1,4 @@
-Introduction
+﻿Introduction
 ------------
 Week based course format with an individual 'toggle' for each week except 0.  The current week is always shown.
 
@@ -184,11 +184,12 @@ Released Moodle 2.0 version.  Treat as completed and out of development.
   3. CONTRIB-3190 - In realising that to make CONTRIB-2975 easier to use I suggested 'Toggle all' functionality and the
                     community said it was a good idea with no negative comments, please see (http://moodle.org/mod/forum/discuss.php?d=176806).
 
-11th October 2011 - Updated version.php to be fully populated.
+11th October 2011 - Version 1.3.1
+  1. Updated version.php to be fully populated.
 
 8th December 2011 - Version 2.0.3.1 - Moodle Tracker CONTRIB-2497
   1. Updated Brazilian translation thanks to Tarcísio Nunes (http://moodle.org/user/profile.php?id=1149633).
-  2. Changed version to relate to Moodle version, so this is for Moodle 2.0.
+  2. Changed version to relate to Moodle version, so this is for Moodle 2.2.
 
 9th December 2011 - Version 2.0.3.2 - Moodle Tracker CONTRIB-3295
   1. Fixed issue of the web browser miscaluating the width of the content in 'editing' mode so that the sections
@@ -200,6 +201,11 @@ Released Moodle 2.0 version.  Treat as completed and out of development.
 23rd January 2012 - Version 2.0.4
   1. Sorted out UTF-8 BOM issue, see MDL-31343.
   2. Added Russian translation, thanks to Pavel Evgenjevich Timoshenko (http://moodle.org/user/profile.php?id=1322784).
+
+18th March 2012 - Version 2.0.5
+  1. Implemented CONTRIB-3225 to make Collapsed Weeks accessible to screen readers.
+  2. Implemented CONTRIB-3283 to ensure that you can still access a week when one is removed.
+  3. This is likely to be the last release of Collapsed Weeks due to its integration into Collapsed Topics - CONTRIB-3378.  This release is later than that but I wanted to leave the code without any outstanding issues.
 
 Thanks
 ------
@@ -247,4 +253,4 @@ Desired Enhancements
 3. Use ordered lists / divs instead of tables to fall in line with current web design theory.  Older versions of
    'certain' browsers causing issues in making this happen.
 
-G J Barnard - MSc, BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 23rd January 2012.
+G J Barnard - MSc, BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 18th March 2012.

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Collapsed Weeks Information
  *
@@ -31,6 +31,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
  
+// Brazilian Translation of Collapsed Weeks Course Format
+// Tradução brasileira de formato do curso Semanas Recolhidas
+
 // Brazilian Translation of Collapsed Weeks Course Format
 // Tradução brasileira de formato do curso Semanas Recolhidas
 
