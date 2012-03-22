@@ -1,8 +1,8 @@
-Introduction
+﻿Introduction
 ------------
 Week based course format with an individual 'toggle' for each week except 0.  The current week is always shown.
 
-This version works with Moodle 2.3.x.
+This version works with Moodle 2.2.x.
 
 Documented on http://docs.moodle.org/23/en/Collapsed_Weeks_course_format
 
@@ -207,6 +207,11 @@ Released Moodle 2.0 version.  Treat as completed and out of development.
   2. Added Russian translation, thanks to Pavel Evgenjevich Timoshenko (http://moodle.org/user/profile.php?id=1322784).
   3. Slight change for MDL-31006 to support PHP 5.4.
 
+18th March 2012 - Version 2.3.3
+  1. Implemented CONTRIB-3225 to make Collapsed Weeks accessible to screen readers.
+  2. Implemented CONTRIB-3283 to ensure that you can still access a week when one is removed.
+  3. This is likely to be the last functional release of Collapsed Weeks due to its integration into Collapsed Topics - CONTRIB-3378.  This release is later than that but I wanted to leave the code without any outstanding issues.  I will maintain it until Moodle 2.3 is released so that it conforms to changes made in core.
+
 Thanks
 ------
 I would like to thank Anthony Borrow - arborrow@jesuits.net & anthony@moodle.org - for his invaluable input.
@@ -253,4 +258,4 @@ Desired Enhancements
 3. Use ordered lists / divs instead of tables to fall in line with current web design theory.  Older versions of
    'certain' browsers causing issues in making this happen.
 
-G J Barnard - MSc, BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 23rd January 2012.
+G J Barnard - MSc, BSc(Hons)(Sndw), MBCS, CEng, CITP, PGCE - 18th March 2012.
