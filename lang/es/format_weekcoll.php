@@ -35,8 +35,8 @@
 
 // Used by the Moodle Core for identifing the format and displaying in the list of formats for a course in its settings.
 // Utilizado por el Núcleo de Moodle identificando el formato y la visualización en la lista de formatos para un curso en su configuración.
-$string['nameweekcoll']='Se derrumbo Semanas';
-$string['formatweekcoll']='Se derrumbo Semanas';
+$string['nameweekcoll']='Semanas desplegables';
+$string['formatweekcoll']='Semanas desplegables';
 
 // Used in format.php
 // Utilizado en format.php
@@ -51,6 +51,8 @@ $string['weekcollclosed']='Cierre todas las';
 // Moodle 2.0 Enhancement - Moodle Tracker MDL-15252, MDL-21693 & MDL-22056 - http://docs.moodle.org/en/Development:Languages
 // Moodle 2.0 Mejora - Moodle Tracker MDL-15252, MDL-21693 & MDL-22056 - http://docs.moodle.org/en/Development:Languages
 $string['sectionname'] = 'Semana';
-$string['pluginname'] = 'Se derrumbo Semanas';
+$string['pluginname'] = 'Semanas desplegables';
 $string['section0name'] = 'General';
+
 ?>
+
