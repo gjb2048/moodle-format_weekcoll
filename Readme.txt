@@ -16,7 +16,7 @@ Installation
 
 Upgrade Instructions
 --------------------
-1. Put Moodle in Maintenance Mode so that there are no users using it bar you as the adminstrator.
+1. Put Moodle in Maintenance Mode so that there are no users using it bar you as the administrator.
 2. In /course/formats/ move old 'weekcoll' directory to a backup folder outside of Moodle.
 3. Follow installation instructions above.
 4. Put Moodle out of Maintenance Mode.
